@@ -2,9 +2,10 @@ import { useState } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 import './App.css'
-import Dashboard from './page/Dashboard'
+// import DashboardContainer from './componentcontain/DashboardFunction'
+ import DashboardCont from './page/DashboardCont'
 import TopNavbar from './component/TopNavbar'
-import AddData from './component/AddData'
+import AddDataCont from './component/AddData/AddDataCont'
 
 
 const App = () => {
@@ -14,8 +15,13 @@ const App = () => {
     <Router>
       <TopNavbar />
     <Routes>
-      <Route path ="/" element={<Dashboard />} />
-      <Route path ="/AddData" element={<AddData />} />
+
+      {/* pecah per bagian */}
+      <Route path ="/" element={<DashboardCont />} /> 
+
+      {/* pecah function */}
+      {/* <Route path ="/" element={<DashboardContainer />} /> */}
+      <Route path ="/add-data" element={<AddDataCont />} />
     </Routes>
      
     </Router>

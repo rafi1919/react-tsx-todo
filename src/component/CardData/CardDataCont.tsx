@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import CardData from './CardData'; // Import the presentational component
 
-const CardDataCont: React.FC = ({ todo }) => {
+interface CardDataProps {
+  todo: any;
+}
+
+const CardDataCont: React.FC<CardDataProps> = ({ todo }) => {
   const [todos, setTodos] = useState<any[]>([]);
   const [editTodo, setEditTodo] = useState<{ id: number | null; text: string }>({
     id: null,
